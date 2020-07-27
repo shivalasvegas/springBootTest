@@ -1,0 +1,9 @@
+package com.qa.qac1;
+
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class QAController{
+	
+	
+}

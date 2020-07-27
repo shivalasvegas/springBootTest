@@ -1,0 +1,18 @@
+package com.qa.qac1;
+
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class QAController{
+
+	@RequestMapping(value="/london")
+	public String london() {
+		return "Hello London!";
+	}
+	
+	@RequestMapping(value="/manchester")
+	public String manchester() {
+		return "Hello QA!";
+	}
+	
+}
