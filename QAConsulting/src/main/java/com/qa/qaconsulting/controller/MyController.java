@@ -1,5 +1,7 @@
 package com.qa.qaconsulting.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -8,12 +10,14 @@ import org.springframework.web.bind.annotation.RestController;
 import com.qa.qaconsulting.entity.Student;
 import com.qa.qaconsulting.repository.StudentRepository;
 
+
 @RestController
 public class MyController {
 	
 	@Autowired
 	StudentRepository stuRepo;
 	
+	// first 
 //	@GetMapping("/save")
 //	public String saveRecord() {
 //		
@@ -24,6 +28,16 @@ public class MyController {
 //		stuRepo.save(ref);
 //		return "Record saved";
 //	}
+	
+	//  findAll() returns a List<> type, so should be saved as a list of type Student
+	// And this returned.
+	@GetMapping("/readall")
+	public List<Student> showAllRecords() {
+		List<Student> records = stuRepo.findAll();
+		
+		return records;
+		
+	}
 	
 	@GetMapping("/save/{studentId}/{name}/{address}")
 	public String save(@PathVariable(value="studentId") int id, 
