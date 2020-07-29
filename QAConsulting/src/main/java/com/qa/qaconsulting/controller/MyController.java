@@ -26,7 +26,9 @@ public class MyController {
 //	}
 	
 	@GetMapping("/save/{studentId}/{name}/{address}")
-	public String save(@PathVariable(value="studentId") int id, @PathVariable(value="name") String name, @PathVariable(value="address") String address) {
+	public String save(@PathVariable(value="studentId") int id, 
+			@PathVariable(value="name") String name, 
+			@PathVariable(value="address") String address) {
 		
 		Student ref2 = new Student();
 		ref2.setStudentId(id);

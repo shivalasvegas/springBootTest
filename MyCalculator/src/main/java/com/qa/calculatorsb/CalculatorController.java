@@ -1,16 +1,23 @@
 package com.qa.calculatorsb;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+//import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class MyController {
+@RequestMapping("/Calculator")
+public class CalculatorController {
 	
-	@RequestMapping(value="maths/{opp}/{a}/{b}", method=RequestMethod.GET)
+	@Autowired
+	MyCalculator myCalc;
+	
+	// @RequestMapping(value="maths/{opp}/{a}/{b}", method=RequestMethod.GET)
+	@GetMapping("/{opp}/{a}/{b}")
 	public double calculation(@PathVariable(value="opp") String opp, @PathVariable(value="a") int a, @PathVariable(value="b") int b){ 
-		MyCalculator myCalc = new MyCalculator();
+		
 		if (opp.equals("add")) {
 			return myCalc.add(a, b);
 		}else if (opp.equals("subtract")) {

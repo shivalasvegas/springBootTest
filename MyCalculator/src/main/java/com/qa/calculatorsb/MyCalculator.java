@@ -1,5 +1,8 @@
 package com.qa.calculatorsb;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class MyCalculator {
 
 	

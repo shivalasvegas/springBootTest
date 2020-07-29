@@ -1,3 +1,19 @@
 1595865119406	Rename type 'MyCalculatorApplication'
 1595865122328	Rename type 'MyCalculatorApplicationTests'
 1595865163444	Rename package 'com.qa.qac1'
+1595929264405	Rename type 'MyController'
+1595929298436	Rename type 'MyCalculatorRunner'
+1595931940137	Move compilation unit
+1595931951695	Move compilation unit
+1595933624485	Move compilation unit
+1595934666317	Delete element
+1595934844620	Delete element
+1595952565802	Delete element
+1595952570900	Delete element
+1595952745137	Copy package
+1595952758527	Delete element
+1595952926733	Rename type 'runner'
+1595953238017	Move compilation unit
+1595953247696	Move compilation unit
+1595953258053	Move compilation unit
+1595953266582	Delete element
