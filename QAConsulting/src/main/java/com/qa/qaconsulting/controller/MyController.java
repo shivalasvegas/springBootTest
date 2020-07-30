@@ -1,6 +1,7 @@
 package com.qa.qaconsulting.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -56,7 +57,7 @@ public class MyController {
 			
 	}
 	
-	@DeleteMapping("deleterecord/{id}")
+	@DeleteMapping("/delete/{studentId}")
 	public String delete(@PathVariable(value="studentId") int id) {
 		Student ref3 = new Student();
 		ref3.setStudentId(id);
@@ -65,8 +66,25 @@ public class MyController {
 	
 	}
 	
-	@PostMapping("insertrecord/")
+	@PostMapping("/insertrecord")
 	public String insertRecord(@RequestBody Student student1) {
-		return student1.getStudentId() + " " + student1.getStudentName() + " " +  student1.getStudentAddress();
+		stuRepo.save(student1);
+		//return student1.getStudentId() + " " + student1.getStudentName() + " " +  student1.getStudentAddress();
+		
+		return "record made";
 	}
+	
+	@GetMapping("/showrecord/{studentId}")
+	public Student specificRecord(@PathVariable("studentId") int id) {
+		
+		Optional<Student> opt = stuRepo.findById(id);
+		if (opt.isPresent()) {
+			Student ref = opt.get();
+			return ref;
+			
+		}
+		return null;
+	}
+	
+	
 }
