@@ -32,6 +32,60 @@ public class Sale {
 	private float tax;  // 1.5
 	@Transient
 	private float netAmount;  // 25.50
+	public int getSalesId() {
+		return salesId;
+	}
+	public void setSalesId(int salesId) {
+		this.salesId = salesId;
+	}
+	public int getProductId() {
+		return productId;
+	}
+	public void setProductId(int productId) {
+		this.productId = productId;
+	}
+	public String getProductName() {
+		return productName;
+	}
+	public void setProductName(String productName) {
+		this.productName = productName;
+	}
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	public int getQuantity() {
+		return quantity;
+	}
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
+	public float getPrice() {
+		return price;
+	}
+	public void setPrice(float price) {
+		this.price = price;
+	}
+	public float getAmount() {
+		return amount;
+	}
+	public void setAmount(float amount) {
+		this.amount = amount;
+	}
+	public float getTax() {
+		return tax;
+	}
+	public void setTax(float tax) {
+		this.tax = tax;
+	}
+	public float getNetAmount() {
+		return netAmount;
+	}
+	public void setNetAmount(float netAmount) {
+		this.netAmount = netAmount;
+	}
 	
 	
 	
