@@ -35,13 +35,13 @@ public class MyController {
 	
 	//  findAll() returns a List<> type, so should be saved as a list of type Student
 	// And this returned.
-	@GetMapping("/readall")
-	public List<Student> showAllRecords() {
-		List<Student> records = stuRepo.findAll();
-		
-		return records;
-		
-	}
+//	@GetMapping("/readall")
+//	public List<Student> showAllRecords() {
+//		List<Student> records = stuRepo.findAll();
+//		
+//		return records;
+//		
+//	}
 	
 	@GetMapping("/save/{studentId}/{name}/{address}")
 	public String save(@PathVariable(value="studentId") int id, 
@@ -75,7 +75,7 @@ public class MyController {
 	}
 	
 	@GetMapping("/showrecord/{studentId}")
-	public Student specificRecord(@PathVariable("studentId") int id) {
+	public Student specificRecord(@PathVariable(value="studentId") int id) {
 		
 		Optional<Student> opt = stuRepo.findById(id);
 		if (opt.isPresent()) {

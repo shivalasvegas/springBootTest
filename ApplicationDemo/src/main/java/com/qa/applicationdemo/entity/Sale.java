@@ -8,7 +8,7 @@ import javax.persistence.Table;
 import javax.persistence.Transient;
 
 @Entity
-@Table(name="Tesco")
+@Table(name="sales")
 
 public class Sale {
 	
@@ -17,12 +17,8 @@ public class Sale {
 	//@Column(unique=true)
 	@Column(name="sales_id")
 	private int salesId;   // 1
-	@Column(name="product_id")
-	private int productId;  //101
 	@Column(length=50, name="product_name")
 	private String productName; //coke
-	@Column(columnDefinition="char(40)")
-	private String description;
 	private int quantity;  //12
 	private float price;  //2.0
 	
@@ -38,24 +34,15 @@ public class Sale {
 	public void setSalesId(int salesId) {
 		this.salesId = salesId;
 	}
-	public int getProductId() {
-		return productId;
-	}
-	public void setProductId(int productId) {
-		this.productId = productId;
-	}
+
 	public String getProductName() {
 		return productName;
 	}
 	public void setProductName(String productName) {
 		this.productName = productName;
 	}
-	public String getDescription() {
-		return description;
-	}
-	public void setDescription(String description) {
-		this.description = description;
-	}
+	
+	
 	public int getQuantity() {
 		return quantity;
 	}
