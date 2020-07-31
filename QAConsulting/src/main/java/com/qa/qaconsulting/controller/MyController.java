@@ -43,19 +43,19 @@ public class MyController {
 //		
 //	}
 	
-	@GetMapping("/save/{studentId}/{name}/{address}")
-	public String save(@PathVariable(value="studentId") int id, 
-			@PathVariable(value="name") String name, 
-			@PathVariable(value="address") String address) {
-		
-		Student ref2 = new Student();
-		ref2.setStudentId(id);
-		ref2.setStudentName(name);
-		ref2.setStudentAddress(address);
-		stuRepo.save(ref2);
-		return "The record for " + ref2.getStudentName() + " is now saved!";
-			
-	}
+//	@GetMapping("/save/{studentId}/{name}/{address}")
+//	public String save(@PathVariable(value="studentId") int id, 
+//			@PathVariable(value="name") String name, 
+//			@PathVariable(value="address") String address) {
+//		
+//		Student ref2 = new Student();
+//		ref2.setStudentId(id);
+//		ref2.setStudentName(name);
+//		ref2.setStudentAddress(address);
+//		stuRepo.save(ref2);
+//		return "The record for " + ref2.getStudentName() + " is now saved!";
+//			
+//	}
 	
 	@DeleteMapping("/delete/{studentId}")
 	public String delete(@PathVariable(value="studentId") int id) {
