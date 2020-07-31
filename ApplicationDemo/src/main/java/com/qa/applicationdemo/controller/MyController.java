@@ -18,17 +18,18 @@ import com.qa.applicationdemo.services.SalesService;
 public class MyController {
 
 	SalesService service;
+	
 	public MyController(SalesService service) {
 		this.service = service;
 	}
 	
-	@PostMapping("/create")
-	public String createRecord(@RequestBody Sale saleItem) {
-	String message = service.create(saleItem);
-
-	return message;
-}
-	
+//	@PostMapping("/create")
+//	public String createRecord(@RequestBody Sale saleItem) {
+//	String message = service.create(saleItem);
+//
+//	return message;
+//}
+//	
 	// Read one record
 	@GetMapping("/readspecific/{salesId}")
 	public Optional<Sale> readOneRecord(@PathVariable(value="salesId") int id) {

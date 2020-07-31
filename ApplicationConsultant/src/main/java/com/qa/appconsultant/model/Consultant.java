@@ -1,5 +1,6 @@
 package com.qa.appconsultant.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -9,12 +10,17 @@ public class Consultant {
 
 	@Id
 	@GeneratedValue
+	@Column(name="consultant_id")
 	private int consultantId;
-	private String name;
-	private String address;
+	@Column(length=50, name="consultant_name")
+	private String consultantName;
+	@Column(length=50)
 	private String client;
+	@Column(length=50)
+	private String technology;
 	private int salary;
 	private int marks;
+	
 	
 	public int getConsultantId() {
 		return consultantId;
@@ -22,23 +28,23 @@ public class Consultant {
 	public void setConsultantId(int consultantId) {
 		this.consultantId = consultantId;
 	}
-	public String getName() {
-		return name;
+	public String getConsultantName() {
+		return consultantName;
 	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public String getAddress() {
-		return address;
-	}
-	public void setAddress(String address) {
-		this.address = address;
+	public void setConsultantName(String consultant) {
+		this.consultantName = consultant;
 	}
 	public String getClient() {
 		return client;
 	}
 	public void setClient(String client) {
 		this.client = client;
+	}
+	public String getTechnology() {
+		return technology;
+	}
+	public void setTechnology(String technology) {
+		this.technology = technology;
 	}
 	public int getSalary() {
 		return salary;
@@ -52,6 +58,7 @@ public class Consultant {
 	public void setMarks(int marks) {
 		this.marks = marks;
 	}
+	
 	
 	
 	

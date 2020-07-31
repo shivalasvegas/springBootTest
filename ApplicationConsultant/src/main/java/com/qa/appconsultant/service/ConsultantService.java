@@ -15,19 +15,24 @@ public class ConsultantService {
 	@Autowired
 	ConsultantRepo conRepo;
 	
-	public List<Consultant> findByClient(){
-		return conRepo.findByClient();
-		
+	//Create		
+	public String create(Consultant consultant) {
+		conRepo.save(consultant);
+	
+		return "Record created";
 	}
 	
-	public List<Consultant> findByTechnology(){
-		return conRepo.findByTechnology();
+	public List<String> clients(){
+		return conRepo.clients();
+	}
+	  
+	public List<String> technologies(){
+		return conRepo.technologies();
 	}
 	
-	public List<Consultant> findByConsultant(){
-		return conRepo.findByConsultant();
+	public List<String> consultants(){
+		return conRepo.consultants();
 	}
-	
 	
 	public int maxSalary() {
 		return conRepo.maxSalary();
@@ -41,8 +46,5 @@ public class ConsultantService {
 		return conRepo.numberTechConsultants(client, tech);
 	}
 	
-	public List<String> clients(){
-		return conRepo.clients();
-	}
-	  
+	
 }
